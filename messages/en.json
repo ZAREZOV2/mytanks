@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "title": "MyTanks - Tank Action Game",
+    "description": "The long-awaited version of Tanks 2014–2017, created to bring back the atmosphere of those past years"
+  },
+  "home": {
+    "downloadButton": "Download game",
+    "downloading": "Downloading... {percent}%"
+  },
+  "header": {
+    "main": "Home",
+    "shop": "Shop",
+    "rules": "Game rules",
+    "discord": "Discord",
+    "toggleMenu": "Toggle menu"
+  },
+  "footer": {
+    "rated": "Rated 6+",
+    "copyright": "© «MyTanks» 2021-2026",
+    "rules": "Game rules",
+    "terms": "Terms of use",
+    "privacy": "Privacy policy"
+  },
+  "donate": {
+    "title": "Game shop",
+    "subtitle": "Redirecting to Discord for purchases...",
+    "redirectTitle": "Shop is on Discord",
+    "redirectText": "To purchase in-game items and support the project, go to our Discord server.",
+    "redirectSubtext": "You will be redirected automatically in a few seconds...",
+    "goToDiscord": "Go to Discord"
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "lastUpdated": "Last updated: {date}",
+    "section1": {
+      "title": "1. General provisions",
+      "content": "This Privacy Policy defines the procedure for processing and protecting personal data of users of the MyTanks website (hereinafter referred to as the \"Site\"). By using the Site, you agree to the terms of this Privacy Policy."
+    },
+    "section2": {
+      "title": "2. Information we collect",
+      "intro": "We may collect the following information:",
+      "item1": "Technical data (IP address, browser type, operating system)",
+      "item2": "Site usage data (visit time, pages viewed)",
+      "item3": "Information you provide when registering or using game features",
+      "item4": "Payment processing data (when making purchases in the game shop)"
+    },
+    "section3": {
+      "title": "3. Use of information",
+      "intro": "The collected information is used to:",
+      "item1": "Provide and improve game services",
+      "item2": "Process payments and manage accounts",
+      "item3": "Ensure security and prevent fraud",
+      "item4": "Send important notifications about game changes",
+      "item5": "Analyze Site usage to improve user experience"
+    },
+    "section4": {
+      "title": "4. Data protection",
+      "content": "We use modern information security methods, including data encryption, secure connections (HTTPS), and restricted access to personal data. However, no method of transmitting data over the Internet is completely secure."
+    },
+    "section5": {
+      "title": "5. Disclosure to third parties",
+      "intro": "We do not sell or disclose your personal data to third parties, except:",
+      "item1": "When necessary to provide services (e.g. payment systems)",
+      "item2": "When required by law or government request",
+      "item3": "With your explicit consent"
+    },
+    "section6": {
+      "title": "6. Cookies and similar technologies",
+      "content": "The Site uses cookies and similar technologies to improve the Site, personalize content and analyze traffic. You can configure your browser to refuse cookies, but this may affect Site functionality."
+    },
+    "section7": {
+      "title": "7. User rights",
+      "intro": "You have the right to:",
+      "item1": "Receive information about your personal data",
+      "item2": "Request correction of inaccurate data",
+      "item3": "Request deletion of your personal data",
+      "item4": "Withdraw consent to data processing",
+      "item5": "File a complaint with the data protection authority"
+    },
+    "section8": {
+      "title": "8. Age restrictions",
+      "content": "The Site is intended for users over 6 years of age. We do not knowingly collect personal data from children under 13 without parental or guardian consent."
+    },
+    "section9": {
+      "title": "9. Changes to the Privacy Policy",
+      "content": "We reserve the right to make changes to this Privacy Policy. We will notify users of significant changes through the Site or by email."
+    },
+    "section10": {
+      "title": "10. Contact",
+      "content": "For questions regarding the processing of personal data, you can contact us at:"
+    }
+  },
+  "terms": {
+    "title": "Terms of use",
+    "lastUpdated": "Last updated: {date}",
+    "section1": {
+      "title": "1. Acceptance of terms",
+      "p1": "These Terms of Use (hereinafter referred to as the \"Agreement\") govern the relationship between the administration of the MyTanks game (hereinafter referred to as the \"Administration\") and the user (hereinafter referred to as the \"User\") when using the game and the website.",
+      "p2": "By using the MyTanks game or the website, you confirm that you have read, understood and agree to comply with all terms of this Agreement. If you do not agree with any of the terms, you must not use the game or the website."
+    },
+    "section2": {
+      "title": "2. Description of service",
+      "p1": "MyTanks is a multiplayer online game that allows users to play tank action. The game includes:",
+      "item1": "Gameplay and competitive modes",
+      "item2": "Progression and upgrade system",
+      "item3": "In-game shop with virtual items",
+      "item4": "Social features and interaction with other players"
+    },
+    "section3": {
+      "title": "3. Registration and account",
+      "intro": "To use the game you must:",
+      "item1": "Create an account with accurate information",
+      "item2": "Keep your account and password secure",
+      "item3": "Take responsibility for all actions performed under your account",
+      "item4": "Notify the Administration immediately of unauthorized access",
+      "p2": "The Administration reserves the right to suspend or delete an account for violation of the Agreement."
+    },
+    "section4": {
+      "title": "4. Code of conduct",
+      "intro": "The User agrees to:",
+      "item1": "Comply with game rules and ethical standards",
+      "item2": "Not use cheats, mods or other programs that provide unfair advantage",
+      "item3": "Not distribute malicious software",
+      "item4": "Not insult other players or use profanity",
+      "item5": "Not use the game for illegal activities",
+      "item6": "Not transfer your account to third parties"
+    },
+    "section5": {
+      "title": "5. Virtual items and payments",
+      "p1": "The game may contain virtual items that can be purchased for real money. By purchasing virtual items, you understand that:",
+      "item1": "Virtual items have no real-world value and cannot be exchanged for money",
+      "item2": "All purchases are final and non-refundable",
+      "item3": "The Administration reserves the right to change or remove virtual items",
+      "item4": "Prices may be changed without prior notice"
+    },
+    "section6": {
+      "title": "6. Intellectual property",
+      "p1": "All game materials, including graphics, sounds, text, program code and other elements, are the property of the Administration and are protected by intellectual property laws.",
+      "p2": "The User is granted a limited, non-exclusive, non-transferable license to use the game for personal, non-commercial purposes."
+    },
+    "section7": {
+      "title": "7. Limitation of liability",
+      "p1": "The game is provided \"as is\" without any warranties. The Administration is not liable for:",
+      "item1": "Loss of data or game progress",
+      "item2": "Temporary unavailability of the game due to maintenance",
+      "item3": "Actions of other users",
+      "item4": "Damage caused by use or inability to use the game"
+    },
+    "section8": {
+      "title": "8. Changes to the game",
+      "content": "The Administration reserves the right to change, update, suspend or discontinue the game or any part of it at any time without prior notice. The Administration is not liable to users for such changes."
+    },
+    "section9": {
+      "title": "9. Sanctions for violations",
+      "p1": "For violation of this Agreement, the Administration may apply the following sanctions:",
+      "item1": "Warning",
+      "item2": "Temporary account suspension",
+      "item3": "Permanent account suspension",
+      "item4": "Account deletion and all associated data",
+      "item5": "Blocking access to the game from your IP address"
+    },
+    "section10": {
+      "title": "10. Changes to the Agreement",
+      "content": "The Administration reserves the right to change this Agreement at any time. Users will be notified of significant changes through the game or website. Continued use of the game after changes constitutes your acceptance of the new terms."
+    },
+    "section11": {
+      "title": "11. Age restrictions",
+      "content": "The game is intended for users over 6 years of age. Users under 18 must obtain parental or guardian permission before using the game and making purchases."
+    },
+    "section12": {
+      "title": "12. Contact",
+      "content": "For any questions regarding this Agreement, you can contact us at:"
+    }
+  },
+  "rules": {
+    "title": "Game rules",
+    "subtitle": "Follow the rules for a comfortable experience for all participants",
+    "introText": "This document constitutes the game rules of MyTanks",
+    "warning1": "Rules apply to all users. The project administration is responsible for enforcing the rules.",
+    "warning2": "Please note that MyTanks administration reserves the right to restrict user access at any time without explanation.",
+    "warning3": "Game rules may be changed at any time without notice to users.",
+    "warning4": "By registering an account, the user automatically agrees to the rules.",
+    "restrictionsTitle": "List of possible restrictions",
+    "restriction1": "Chat ban (temporary/permanent)",
+    "restriction2": "Account ban (temporary/permanent)",
+    "restriction3": "Game account reset (partial/full)",
+    "restriction4": "Other restrictions",
+    "restrictionsNote1": "Administrators and moderators reserve the right to set punishment terms that differ from those specified in the rules.",
+    "restrictionsNote2": "The administration reserves the right to refuse assistance if your question or request is formulated incorrectly or unclearly.",
+    "generalTitle": "General provisions",
+    "general1": "By registering on the project, you confirm your agreement with these rules.",
+    "general2": "Ignorance of the rules does not exempt you from responsibility.",
+    "general3": "The administration has the right to amend these rules at any time.",
+    "general4": "The administration is not obliged to return game resources lost due to bugs, errors, rollbacks and other unforeseen circumstances.",
+    "general5": "The account owner is the person who registered the account on the server.",
+    "general6": "Transfer or sale of an account to anyone is not permitted.",
+    "general7": "You must keep your account data confidential. Account security is entirely your responsibility.",
+    "general8": "The administration does not compensate for damage caused by users who have partially or fully gained access to your account.",
+    "general9": "You are responsible for actions from your account performed by third parties.",
+    "general10": "The project administration reserves the right to deny you use of the project at any time.",
+    "gameplayTitle": "Gameplay",
+    "gameplay1": "Inactivity for more than 5 minutes is prohibited and is not allowed more than twice in a row in team battles.",
+    "gameplay2": "Passive play — the user is strictly prohibited from displaying full or partial \"passive\" behavior.",
+    "gameplay3": "Actions aimed at hindering the team for which the user is fighting in team modes (sabotage) are prohibited.",
+    "gameplay4": "Use of bugs, errors, shortcomings and oversights of the game is prohibited. Found bugs should be reported to the project administration.",
+    "gameplay5": "Deceiving players for personal gain is prohibited. Any fraudulent actions aimed at hijacking/stealing/hacking other users' game accounts are prohibited.",
+    "gameplay6": "It is prohibited to in any way hinder players from doing parkour (intentionally killing, pushing, flipping, obstructing with mines, etc.) on maps whose name contains the word \"Parkour\".",
+    "communicationTitle": "Communication",
+    "comm1": "Any kind of insults towards other game users, the Administration, project assistants, or other persons are prohibited.",
+    "comm2": "Posting information or symbols that offend or humiliate the feelings of believers, incite hatred, hostility, racial, interethnic or ethnic strife, or intolerance is prohibited.",
+    "comm3": "Use of obscene language (profanity), offensive language, or other abusive or rude words (expressions) is prohibited.",
+    "comm4": "Flooding, flaming, spam, repeating system messages, as well as typing in all caps (CAPS LOCK) is not allowed.",
+    "comm5": "Begging in any form, including requests for money transfers, transfer of in-game valuables, crystals from the project Administration or others is prohibited.",
+    "comm6": "Persistent discussion of the actions and/or inaction of the project Administration and its assistants is prohibited.",
+    "comm7": "Distribution of any personal information of Administration staff, project assistants and third parties is prohibited.",
+    "comm8": "Posting information about methods of suicide, calls for suicide, violence, or other actions that pose a threat to life or health is prohibited.",
+    "comm9": "Discussing political topics, imposing political views, explaining the political situation, or provoking conversations on political or related topics is strictly prohibited.",
+    "otherTitle": "Other",
+    "other1": "Any attempt to impersonate a former or current Administration employee or project assistant is prohibited.",
+    "other2": "Creating battles with unacceptable names is prohibited. Battle names must not be offensive or include profanity, including in disguised form.",
+    "other3intro": "Nickname (game login) must meet the following standards:",
+    "other3a": "must not be offensive;",
+    "other3b": "must not have visual similarity to the nicknames of current and former Administration staff or project assistants.",
+    "other4": "Using multiple accounts to circumvent a ban, chat block or other restrictions for one player is prohibited.",
+    "other5": "Advertising of third-party resources is prohibited.",
+    "other6": "Direct or indirect promotion of drugs and alcohol is prohibited.",
+    "other7": "Posting links to sites/hosting containing third-party software is prohibited.",
+    "other8": "Posting links to third-party resources disguised as official game resources is prohibited.",
+    "infoTitle": "Additional information",
+    "info1": "Rules are gradually updated and supplemented.",
+    "info2": "These rules may be changed by the game Administration without any prior notice. The player agrees to check these rules for changes at least once every seven days (i.e. weekly). If such a check is not carried out within the specified time, and the player continues to use the game service, it is considered that the player has read and agreed to these Rules in their amended edition.",
+    "footerNote": "Sincerely, the MyTanks team"
+  }
+}

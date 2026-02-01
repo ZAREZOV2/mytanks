@@ -2,25 +2,23 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useTranslations, useLocale } from 'next-intl'
 import styles from './Header.module.css'
 
 export default function Header() {
+  const t = useTranslations('header')
+  const locale = useLocale()
+  const fullPath = usePathname()
+  const pathSuffix = (fullPath?.replace(/^\/(ru|en)/, '') || '') || ''
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const touchStartX = useRef<number | null>(null)
   const touchStartY = useRef<number | null>(null)
   const touchStartTime = useRef<number | null>(null)
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
-  const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
-
-  const openMenu = () => {
-    setIsMenuOpen(true)
-  }
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const closeMenu = () => setIsMenuOpen(false)
+  const openMenu = () => setIsMenuOpen(true)
 
   useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
@@ -30,12 +28,8 @@ export default function Header() {
       touchStartTime.current = Date.now()
     }
 
-    const handleTouchMove = (e: TouchEvent) => {
+    const handleTouchMove = (_e: TouchEvent) => {
       if (touchStartX.current === null || touchStartY.current === null) return
-      
-      const touch = e.touches[0]
-      const deltaX = touch.clientX - touchStartX.current
-      const deltaY = touch.clientY - touchStartY.current
     }
 
     const handleTouchEnd = (e: TouchEvent) => {
@@ -45,38 +39,23 @@ export default function Header() {
         touchStartTime.current = null
         return
       }
-
       const touch = e.changedTouches[0]
       const deltaX = touch.clientX - touchStartX.current
       const deltaY = touch.clientY - touchStartY.current
       const deltaTime = Date.now() - touchStartTime.current
-      const windowWidth = window.innerWidth
-      const startX = touchStartX.current
       const minSwipeDistance = 50
       const maxSwipeTime = 500
       const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > Math.abs(deltaY) * 1.5
-
-      // Свайп справа налево для открытия (меню закрыто, свайп влево)
-      if (!isMenuOpen && isHorizontalSwipe && deltaX < -minSwipeDistance && deltaTime < maxSwipeTime) {
-        openMenu()
-      }
-      
-      // Свайп слева направо для закрытия (меню открыто, свайп вправо)
-      if (isMenuOpen && isHorizontalSwipe && deltaX > minSwipeDistance && deltaTime < maxSwipeTime) {
-        closeMenu()
-      }
-
+      if (!isMenuOpen && isHorizontalSwipe && deltaX < -minSwipeDistance && deltaTime < maxSwipeTime) openMenu()
+      if (isMenuOpen && isHorizontalSwipe && deltaX > minSwipeDistance && deltaTime < maxSwipeTime) closeMenu()
       touchStartX.current = null
       touchStartY.current = null
       touchStartTime.current = null
     }
-
-    // Добавляем обработчики на всех устройствах с поддержкой touch
     if (typeof window !== 'undefined' && 'ontouchstart' in window) {
       document.addEventListener('touchstart', handleTouchStart, { passive: true })
       document.addEventListener('touchmove', handleTouchMove, { passive: true })
       document.addEventListener('touchend', handleTouchEnd, { passive: true })
-
       return () => {
         document.removeEventListener('touchstart', handleTouchStart)
         document.removeEventListener('touchmove', handleTouchMove)
@@ -87,29 +66,18 @@ export default function Header() {
 
   return (
     <>
-      {/* Overlay для закрытия меню - вне header для избежания проблем с DOM */}
       {isMenuOpen && (
-        <div 
-          className={styles.overlay} 
-          onClick={closeMenu}
-        />
+        <div className={styles.overlay} onClick={closeMenu} />
       )}
-      
       <header className={styles.header}>
         <div className={styles.container}>
-          <Link href="/" className={styles.logoLink} onClick={closeMenu}>
-            <img
-              src="/assets/logo_mt.png"
-              alt="MyTanks"
-              className={styles.logo}
-            />
+          <Link href={`/${locale}`} className={styles.logoLink} onClick={closeMenu}>
+            <img src="/assets/logo_mt.png" alt="MyTanks" className={styles.logo} />
           </Link>
-          
-          {/* Гамбургер-меню для мобильных */}
-          <button 
+          <button
             className={styles.menuToggle}
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label={t('toggleMenu')}
             aria-expanded={isMenuOpen}
           >
             <span className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}>
@@ -118,12 +86,10 @@ export default function Header() {
               <span></span>
             </span>
           </button>
-
-          {/* Десктопная навигация */}
           <nav className={styles.nav}>
-            <Link href="/" className={styles.navLink}>Главная</Link>
-            <Link href="/donate" className={`${styles.navLink} ${styles.shopLink}`}>
-              <span className={styles.shopText}>Магазин</span>
+            <Link href={`/${locale}`} className={styles.navLink}>{t('main')}</Link>
+            <Link href={`/${locale}/donate`} className={`${styles.navLink} ${styles.shopLink}`}>
+              <span className={styles.shopText}>{t('shop')}</span>
               <div className={styles.snowflakes}>
                 <span className={styles.snowflake}>❄</span>
                 <span className={styles.snowflake}>❄</span>
@@ -131,37 +97,28 @@ export default function Header() {
                 <span className={styles.snowflake}>❄</span>
               </div>
             </Link>
-            <Link href="/rules" className={styles.navLink}>Правила игры</Link>
-            <a 
-              href="https://discord.gg/Htu5XPhmqt" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={styles.navLink}
-            >
-              Дискорд
+            <Link href={`/${locale}/rules`} className={styles.navLink}>{t('rules')}</Link>
+            <a href="https://discord.gg/Htu5XPhmqt" target="_blank" rel="noopener noreferrer" className={styles.navLink}>
+              {t('discord')}
             </a>
+            <div className={styles.langSwitcher}>
+              <a href={`/ru${pathSuffix}`} className={locale === 'ru' ? styles.langActive : undefined}>RU</a>
+              <span className={styles.langSep}>|</span>
+              <a href={`/en${pathSuffix}`} className={locale === 'en' ? styles.langActive : undefined}>EN</a>
+            </div>
           </nav>
-
-          {/* Мобильное меню */}
           <nav className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}>
-            <Link href="/" className={styles.mobileNavLink} onClick={closeMenu}>
-              Главная
-            </Link>
-            <Link href="/donate" className={`${styles.mobileNavLink} ${styles.mobileShopLink}`} onClick={closeMenu}>
-              Магазин
-            </Link>
-            <Link href="/rules" className={styles.mobileNavLink} onClick={closeMenu}>
-              Правила игры
-            </Link>
-            <a 
-              href="https://discord.gg/Htu5XPhmqt" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={styles.mobileNavLink}
-              onClick={closeMenu}
-            >
-              Дискорд
+            <Link href={`/${locale}`} className={styles.mobileNavLink} onClick={closeMenu}>{t('main')}</Link>
+            <Link href={`/${locale}/donate`} className={`${styles.mobileNavLink} ${styles.mobileShopLink}`} onClick={closeMenu}>{t('shop')}</Link>
+            <Link href={`/${locale}/rules`} className={styles.mobileNavLink} onClick={closeMenu}>{t('rules')}</Link>
+            <a href="https://discord.gg/Htu5XPhmqt" target="_blank" rel="noopener noreferrer" className={styles.mobileNavLink} onClick={closeMenu}>
+              {t('discord')}
             </a>
+            <div className={styles.mobileLangSwitcher}>
+              <a href={`/ru${pathSuffix}`} className={locale === 'ru' ? styles.langActive : undefined} onClick={closeMenu}>RU</a>
+              <span className={styles.langSep}>|</span>
+              <a href={`/en${pathSuffix}`} className={locale === 'en' ? styles.langActive : undefined} onClick={closeMenu}>EN</a>
+            </div>
           </nav>
         </div>
       </header>
