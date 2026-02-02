@@ -9,16 +9,33 @@ type Props = {
   params: Promise<{ locale: string }>
 }
 
+const localeTitles: Record<string, string> = {
+  ru: 'MyTanks - Танковый экшен',
+  en: 'MyTanks - Tank Action Game',
+  hy: 'MyTanks - Թանկային ակշն',
+  zh: 'MyTanks - 坦克动作游戏',
+  ja: 'MyTanks - 戦車アクションゲーム',
+}
+const localeDescriptions: Record<string, string> = {
+  ru: 'Долгожданная версия Танков 2014–2017 годов, созданная для возвращения той самой атмосферности прошлых лет',
+  en: 'The long-awaited version of Tanks 2014–2017, created to bring back the atmosphere of those past years',
+  hy: '2014–2017 թթ. սպասված Թանկերի տարբերակը, ստեղծված այն ատմոսֆերան վերադարձնելու համար',
+  zh: '2014–2017年坦克游戏期待版本，重现往日氛围',
+  ja: '2014–2017年のタンクの待望のバージョン、あの雰囲気を取り戻すために',
+}
+const ogLocales: Record<string, string> = {
+  ru: 'ru_RU',
+  en: 'en_US',
+  hy: 'hy_AM',
+  zh: 'zh_CN',
+  ja: 'ja_JP',
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const isRu = locale === 'ru'
-  const title = isRu
-    ? 'MyTanks - Танковый экшен'
-    : 'MyTanks - Tank Action Game'
-  const description = isRu
-    ? 'Долгожданная версия Танков 2014–2017 годов, созданная для возвращения той самой атмосферности прошлых лет'
-    : 'The long-awaited version of Tanks 2014–2017, created to bring back the atmosphere of those past years'
-  const ogLocale = isRu ? 'ru_RU' : 'en_US'
+  const title = localeTitles[locale] ?? localeTitles.en
+  const description = localeDescriptions[locale] ?? localeDescriptions.en
+  const ogLocale = ogLocales[locale] ?? 'en_US'
 
   return {
     title,
@@ -41,6 +58,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         ru: 'https://mytanks.online/ru',
         en: 'https://mytanks.online/en',
+        hy: 'https://mytanks.online/hy',
+        zh: 'https://mytanks.online/zh',
+        ja: 'https://mytanks.online/ja',
       },
     },
   }
@@ -52,7 +72,7 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params
-  if (!routing.locales.includes(locale as 'ru' | 'en')) {
+  if (!routing.locales.includes(locale as 'ru' | 'en' | 'hy' | 'zh' | 'ja')) {
     return null
   }
   setRequestLocale(locale)

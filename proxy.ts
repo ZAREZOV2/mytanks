@@ -9,5 +9,5 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/(ru|en)/:path*'],
+  matcher: ['/', '/(ru|en|hy|zh|ja)/:path*'],
 }

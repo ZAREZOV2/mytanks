@@ -8,7 +8,8 @@ export default function TermsPage() {
   const t = useTranslations('terms')
   const tFooter = useTranslations('footer')
   const locale = useLocale()
-  const dateStr = new Date().toLocaleDateString(locale === 'ru' ? 'ru-RU' : 'en-US', {
+  const dateLocale = { ru: 'ru-RU', en: 'en-US', hy: 'hy-AM', zh: 'zh-CN', ja: 'ja-JP' }[locale] ?? 'en-US'
+  const dateStr = new Date().toLocaleDateString(dateLocale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

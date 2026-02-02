@@ -10,7 +10,7 @@ export default function Header() {
   const t = useTranslations('header')
   const locale = useLocale()
   const fullPath = usePathname()
-  const pathSuffix = (fullPath?.replace(/^\/(ru|en)/, '') || '') || ''
+  const pathSuffix = (fullPath?.replace(/^\/(ru|en|hy|zh|ja)/, '') || '') || ''
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const touchStartX = useRef<number | null>(null)
   const touchStartY = useRef<number | null>(null)
@@ -105,6 +105,12 @@ export default function Header() {
               <a href={`/ru${pathSuffix}`} className={locale === 'ru' ? styles.langActive : undefined}>RU</a>
               <span className={styles.langSep}>|</span>
               <a href={`/en${pathSuffix}`} className={locale === 'en' ? styles.langActive : undefined}>EN</a>
+              <span className={styles.langSep}>|</span>
+              <a href={`/hy${pathSuffix}`} className={locale === 'hy' ? styles.langActive : undefined}>HY</a>
+              <span className={styles.langSep}>|</span>
+              <a href={`/zh${pathSuffix}`} className={locale === 'zh' ? styles.langActive : undefined}>ZH</a>
+              <span className={styles.langSep}>|</span>
+              <a href={`/ja${pathSuffix}`} className={locale === 'ja' ? styles.langActive : undefined}>JA</a>
             </div>
           </nav>
           <nav className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}>
@@ -118,6 +124,12 @@ export default function Header() {
               <a href={`/ru${pathSuffix}`} className={locale === 'ru' ? styles.langActive : undefined} onClick={closeMenu}>RU</a>
               <span className={styles.langSep}>|</span>
               <a href={`/en${pathSuffix}`} className={locale === 'en' ? styles.langActive : undefined} onClick={closeMenu}>EN</a>
+              <span className={styles.langSep}>|</span>
+              <a href={`/hy${pathSuffix}`} className={locale === 'hy' ? styles.langActive : undefined} onClick={closeMenu}>HY</a>
+              <span className={styles.langSep}>|</span>
+              <a href={`/zh${pathSuffix}`} className={locale === 'zh' ? styles.langActive : undefined} onClick={closeMenu}>ZH</a>
+              <span className={styles.langSep}>|</span>
+              <a href={`/ja${pathSuffix}`} className={locale === 'ja' ? styles.langActive : undefined} onClick={closeMenu}>JA</a>
             </div>
           </nav>
         </div>
