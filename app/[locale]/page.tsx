@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Header from './components/Header'
 import SnowEffect from './components/SnowEffect'
+import LangSwitcher from './components/LangSwitcher'
 import styles from './page.module.css'
 
 const GAME_DOWNLOAD_URL = process.env.NEXT_PUBLIC_GAME_URL ||
@@ -90,6 +91,7 @@ export default function Home() {
             <a href={`/${locale}/terms`} className={styles.footerLink}>{tFooter('terms')}</a>
             <a href={`/${locale}/privacy`} className={styles.footerLink}>{tFooter('privacy')}</a>
           </div>
+          <LangSwitcher className={styles.footerLangSwitcher} />
         </div>
       </footer>
     </div>

@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.root a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.root a:hover {
+  color: #fff;
+}
+
+.langActive {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.langSep {
+  color: rgba(255, 255, 255, 0.5);
+  user-select: none;
+}

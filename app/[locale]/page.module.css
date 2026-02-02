@@ -442,6 +442,17 @@
   width: 100%;
 }
 
+.footerLangSwitcher {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .footerLangSwitcher {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .mainTitle {

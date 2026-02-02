@@ -134,11 +134,18 @@
   width: 100%;
 }
 
+/* На ПК переключатель языков перенесён в футер */
 .langSwitcher {
   display: flex;
   align-items: center;
   gap: 0.25rem;
   margin-left: 0.5rem;
+}
+
+@media (min-width: 769px) {
+  .langSwitcher {
+    display: none;
+  }
 }
 
 .langSwitcher a,

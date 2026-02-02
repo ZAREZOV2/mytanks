@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Header from '../components/Header'
+import LangSwitcher from '../components/LangSwitcher'
 import styles from './page.module.css'
 
 const DISCORD_LINK = 'https://discord.gg/6BT4GxVB49'
@@ -46,6 +47,7 @@ export default function DonatePage() {
             <a href={`/${locale}/terms`} className={styles.footerLink}>{tFooter('terms')}</a>
             <a href={`/${locale}/privacy`} className={styles.footerLink}>{tFooter('privacy')}</a>
           </div>
+          <LangSwitcher className={styles.footerLangSwitcher} />
         </div>
       </footer>
     </div>
