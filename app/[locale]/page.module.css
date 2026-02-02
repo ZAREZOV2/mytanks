@@ -144,6 +144,8 @@
 .downloadButton {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 0.75rem;
   padding: 1.5rem 4rem;
   font-size: 1.5rem;

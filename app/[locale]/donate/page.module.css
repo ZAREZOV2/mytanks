@@ -109,6 +109,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+  text-align: center;
 }
 
 .discordButton:hover {
